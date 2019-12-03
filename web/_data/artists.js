@@ -14,7 +14,7 @@ function generateAuthor (author) {
 }
 
 async function getAuthors () {
-  const filter = groq`*[_type == "author"]`
+  const filter = groq`*[_type == "artist"]`
   const docs = await client.fetch(filter).catch(err => console.error(err))
   const authors = docs.map(generateAuthor)
   const reducedAuthors = overlayDrafts(hasToken, authors)

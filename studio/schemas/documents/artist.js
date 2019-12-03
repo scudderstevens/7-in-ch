@@ -1,7 +1,7 @@
 export default {
-  name: 'author',
+  name: 'artist',
   type: 'document',
-  title: 'Author',
+  title: 'Artist',
   fields: [
     {
       name: 'name',
@@ -24,10 +24,28 @@ export default {
       title: 'Image'
     },
     {
-      name: 'bio',
-      type: 'bioPortableText',
-      title: 'Biography'
-    }
+    name: 'artistDetails',
+    type: 'document',
+    title: 'Artist Details',
+    fields: [
+      {
+        name: 'bio',
+        type: 'bioPortableText',
+        title: 'Biography'
+      },
+      {
+        name: 'aka',
+        title: 'Also Know As',
+        type: 'array',
+        of: [{
+            type: 'reference',
+            to: {
+              type: 'aka'
+            }}
+        ]
+      }
+    ]
+  }
   ],
   preview: {
     select: {

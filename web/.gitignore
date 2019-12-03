@@ -72,3 +72,5 @@ yarn.lock
 
 # Static site
 _site
+__site
+

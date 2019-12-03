@@ -3,7 +3,7 @@ import MdSettings from 'react-icons/lib/md/settings'
 import MdPerson from 'react-icons/lib/md/person'
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'siteSettings'].includes(listItem.getId())
+  ![ 'artist', 'category', 'genre', 'aka', 'post', 'siteSettings'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -23,14 +23,19 @@ export default () =>
         .schemaType('post')
         .child(S.documentTypeList('post').title('Blog posts')),
       S.listItem()
-        .title('Authors')
+        .title('Artists')
         .icon(MdPerson)
-        .schemaType('author')
-        .child(S.documentTypeList('author').title('Authors')),
+        .schemaType('artist')
+        .child(S.documentTypeList('artist').title('Artists')),
       S.listItem()
-        .title('Categories')
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
+        .title('Genres')
+        .schemaType('genre')
+        .child(S.documentTypeList('genre').title('Genre')),
+      S.listItem()
+        .title('AKAs')
+        .icon(MdPerson)
+        .schemaType('aka')
+        .child(S.documentTypeList('aka').title('AKAs')),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

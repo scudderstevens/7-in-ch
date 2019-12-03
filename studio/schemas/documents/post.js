@@ -40,27 +40,36 @@ export default {
         'This ends up on summary pages, on Google, when people share your post in social media.'
     },
     {
-      name: 'authors',
-      title: 'Authors',
+      name: 'artist',
       type: 'array',
-      of: [
-        {
-          type: 'authorReference'
-        }
+      title: 'Artists',
+      of: [{
+          type: 'reference',
+          to: { 
+            type: 'artist'
+          }}
       ]
     },
     {
-      name: 'categories',
+      name: 'genre',
       type: 'array',
-      title: 'Categories',
-      of: [
-        {
+      title: 'Genre',
+      of: [{
           type: 'reference',
-          to: {
-            type: 'category'
-          }
-        }
+          to: { 
+            type: 'genre'
+          }}
       ]
+    },
+    {
+      name: 'teaser',
+      type: 'string',
+      title: 'Teaser Text',
+      description:
+        'This ends up on summary pages, on Google, when people share your post in social media.',
+      options: {
+        maxLength: 140
+      }
     },
     {
       name: 'body',
