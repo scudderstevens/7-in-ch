@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-eleventy-blog",
+  "name": "7-inch",
   "version": "1.0.0",
   "scripts": {
     "build": "lerna run build --parallel",
