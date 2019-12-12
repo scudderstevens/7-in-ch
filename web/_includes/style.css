@@ -137,3 +137,7 @@ a:visited {
 a:hover {
   text-decoration: none;
 }
+.embed-video > iframe.youtube {
+    width: 800px;
+    height: 500px;
+}

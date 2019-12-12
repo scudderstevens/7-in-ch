@@ -1,9 +1,12 @@
 import S from '@sanity/desk-tool/structure-builder'
-import MdSettings from 'react-icons/lib/md/settings'
-import MdPerson from 'react-icons/lib/md/person'
+// https://react-icons.netlify.com/#/icons/md
+
+import settings from 'react-icons/lib/md/settings'
+import person from 'react-icons/lib/md/person'
+import alias from 'react-icons/lib/md/contacts'
 
 const hiddenDocTypes = listItem =>
-  ![ 'artist', 'category', 'genre', 'aka', 'post', 'siteSettings'].includes(listItem.getId())
+  ![ 'artist', 'category', 'genre', 'alias', 'post', 'siteSettings'].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -11,7 +14,7 @@ export default () =>
     .items([
       S.listItem()
         .title('Settings')
-        .icon(MdSettings)
+        .icon(settings)
         .child(
           S.editor()
             .id('siteSettings')
@@ -24,7 +27,7 @@ export default () =>
         .child(S.documentTypeList('post').title('Blog posts')),
       S.listItem()
         .title('Artists')
-        .icon(MdPerson)
+        .icon(person)
         .schemaType('artist')
         .child(S.documentTypeList('artist').title('Artists')),
       S.listItem()
@@ -32,10 +35,10 @@ export default () =>
         .schemaType('genre')
         .child(S.documentTypeList('genre').title('Genre')),
       S.listItem()
-        .title('AKAs')
-        .icon(MdPerson)
-        .schemaType('aka')
-        .child(S.documentTypeList('aka').title('AKAs')),
+        .title('Alias')
+        .icon(alias)
+        .schemaType('alias')
+        .child(S.documentTypeList('alias').title('Alias')),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

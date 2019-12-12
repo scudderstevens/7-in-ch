@@ -29,20 +29,35 @@ export default {
     title: 'Artist Details',
     fields: [
       {
+        name: 'realName',
+        type: 'string',
+        title: 'Real Name'
+      },
+      {
+        name: 'alias',
+        title: 'Alias',
+        type: 'array',
+        of: [{
+            type: 'reference',
+            to: {
+              type: 'alias'
+            }}
+        ]
+      },
+      {
         name: 'bio',
         type: 'bioPortableText',
         title: 'Biography'
       },
       {
-        name: 'aka',
-        title: 'Also Know As',
-        type: 'array',
-        of: [{
-            type: 'reference',
-            to: {
-              type: 'aka'
-            }}
-        ]
+        name: 'website',
+        type: 'url',
+        title: 'Artist Website'
+      },
+      {
+        name: 'discogs',
+        type: 'url',
+        title: 'Discogs Profile'
       }
     ]
   }

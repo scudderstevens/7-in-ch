@@ -23,5 +23,9 @@
     "luxon": "^1.19.3",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.5"
+  },
+  "dependencies": {
+    "get-youtube-id": "^1.0.1",
+    "react-youtube": "^7.9.0"
   }
 }

@@ -1,7 +1,7 @@
 export default {
-  name: 'aka',
+  name: 'alias',
   type: 'document',
-  title: 'AKAs',
+  title: 'Alias',
   fields: [
     {
       name: 'title',
