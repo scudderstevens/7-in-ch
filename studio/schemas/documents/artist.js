@@ -19,9 +19,9 @@ export default {
       }
     },
     {
-      name: 'image',
+      name: 'mainImage',
       type: 'mainImage',
-      title: 'Image'
+      title: 'Main Image'
     },
     {
     name: 'artistDetails',
@@ -37,12 +37,11 @@ export default {
         name: 'alias',
         title: 'Alias',
         type: 'array',
-        of: [{
-            type: 'reference',
-            to: {
-              type: 'alias'
-            }}
-        ]
+        description: `Add aliases that this artist might also be know as.`,
+        of: [{type: 'string'}],
+        options: {
+          layout: 'tags'
+        }
       },
       {
         name: 'bio',
@@ -65,8 +64,7 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'slug.current',
-      media: 'image'
+      media: 'mainImage'
     }
   }
 }

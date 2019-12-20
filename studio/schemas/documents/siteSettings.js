@@ -24,13 +24,6 @@ export default {
       options: {
         layout: 'tags'
       }
-    },
-    // {
-    //   name: 'artist',
-    //   type: 'reference',
-    //   description: 'Publish an artist and set a reference to them here.',
-    //   title: 'Artist',
-    //   to: [{type: 'artist'}]
-    // }
+    }
   ]
 }

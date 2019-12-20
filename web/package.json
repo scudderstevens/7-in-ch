@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "get-youtube-id": "^1.0.1",
+    "react-player": "^1.14.2",
     "react-youtube": "^7.9.0"
   }
 }

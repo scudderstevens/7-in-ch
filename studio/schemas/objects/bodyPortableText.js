@@ -51,5 +51,11 @@ export default {
     {
       type: 'youtube'
     },
+    {
+      type: 'trackPreview'
+    },
+    {
+      type: 'artistProfile'
+    }
   ]
 }

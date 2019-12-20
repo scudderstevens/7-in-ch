@@ -2,4 +2,4 @@
 ## studio
 
 ### NOTES: 
-ADD: (link)[https://linkto.com]
+ADD: (track preview)[https://www.npmjs.com/package/react-player]

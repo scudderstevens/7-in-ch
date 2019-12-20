@@ -1,12 +1,14 @@
 import S from '@sanity/desk-tool/structure-builder'
-// https://react-icons.netlify.com/#/icons/md
 
+// https://react-icons.netlify.com/#/icons/md
 import settings from 'react-icons/lib/md/settings'
-import person from 'react-icons/lib/md/person'
-import alias from 'react-icons/lib/md/contacts'
+import artist from 'react-icons/lib/md/portrait'
+import alias from 'react-icons/lib/md/person-pin'
+import post from 'react-icons/lib/md/library-books'
+import track from 'react-icons/lib/md/music-video'
 
 const hiddenDocTypes = listItem =>
-  ![ 'artist', 'category', 'genre', 'alias', 'post', 'siteSettings'].includes(listItem.getId())
+  ![ 'siteSettings', 'post', 'artist', 'track', 'category', 'genre', 'alias' ].includes(listItem.getId())
 
 export default () =>
   S.list()
@@ -23,22 +25,23 @@ export default () =>
         ),
       S.listItem()
         .title('Blog posts')
+        .icon(post)
         .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts')),
+        .child(S.documentTypeList('post').title('Blog Post')),
       S.listItem()
         .title('Artists')
-        .icon(person)
+        .icon(artist)
         .schemaType('artist')
-        .child(S.documentTypeList('artist').title('Artists')),
+        .child(S.documentTypeList('artist').title('Artist Details')),
+      S.listItem()
+        .title('Tracks')
+        .icon(track)
+        .schemaType('track')
+        .child(S.documentTypeList('track').title('Track Details')),
       S.listItem()
         .title('Genres')
         .schemaType('genre')
         .child(S.documentTypeList('genre').title('Genre')),
-      S.listItem()
-        .title('Alias')
-        .icon(alias)
-        .schemaType('alias')
-        .child(S.documentTypeList('alias').title('Alias')),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above

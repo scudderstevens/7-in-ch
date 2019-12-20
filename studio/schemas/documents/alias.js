@@ -4,14 +4,20 @@ export default {
   title: 'Alias',
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Title'
+      name: 'name',
+      type: 'string'
     },
     {
-      name: 'description',
-      type: 'text',
-      title: 'Description'
+      name: 'mainImage',
+      type: 'mainImage',
+      title: 'Main Image',
+      description: `Preview image for listings`
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'name',
+      media: 'image'
+    }
+  }
 }
